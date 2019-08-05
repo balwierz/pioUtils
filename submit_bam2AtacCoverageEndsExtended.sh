@@ -9,6 +9,12 @@
 ## submitted bug report:
 ## https://github.com/tjparnell/biotoolbox/issues/10
 
+if [[ -z $1 ]]
+then
+        echo "Usage: sbatch thisFILE atac.bam <extSize=50> <assembly=danRer7>"
+        exit 1
+fi
+
 extSize=$2
 if [[ -z $extSize ]]
 then

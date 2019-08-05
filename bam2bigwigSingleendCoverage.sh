@@ -43,8 +43,8 @@ then
 	perl -wane '$F[3] = -$F[3]; print join("\t", @F), "\n"' $outFile.coverage_r.bdg > $outFile.coverage_r.bdg.new
 	mv $outFile.coverage_r.bdg.new $outFile.coverage_r.bdg
 	# convert to bedgraph:
-	bedGraphToBigWig $outFile.coverage_f.bdg /mnt/biggles/data/UCSC/goldenpath/danRer7/chromInfo.txt $outFile.coverage_f.bw
-	bedGraphToBigWig $outFile.coverage_r.bdg /mnt/biggles/data/UCSC/goldenpath/danRer7/chromInfo.txt $outFile.coverage_r.bw
+	bedGraphToBigWig -clip $outFile.coverage_f.bdg /mnt/biggles/data/UCSC/goldenpath/danRer7/chromInfo.txt $outFile.coverage_f.bw
+	bedGraphToBigWig -clip $outFile.coverage_r.bdg /mnt/biggles/data/UCSC/goldenpath/danRer7/chromInfo.txt $outFile.coverage_r.bw
 	#rm $outFile.coverage_f.bdg $outFile.coverage_r.bdg
 else
 	bam2wig.pl $opts --pos span --nope --nomodel --rpm --in $inFile --cpu $SLURM_CPUS_PER_TASK --nogz --bw --out $outFile.coverage.wig
