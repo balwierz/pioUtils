@@ -30,7 +30,7 @@ fi
 #LC_ALL=C sort -k1,1 -k2,2n $bb.peSpan.bdg > $bb.peSpan.sorted.bdg
 #bedGraphToBigWig $bb.peSpan.sorted.wig $assemlyLen $bb.peSpan.bw
 
-tmpDir=$(mktemp /mnt/scratch/piotr/bam2bigwitPairedendCoverage.XXXXXXXXXX --directory)
+tmpDir=$(mktemp /mnt/scratch/piotr/bam2bigwigPairedendCoverage.XXXXXXXXXX --directory)
 bam2wig.pl --pos span --pe --rpm --maxsize 500 --fix --in $1 --cpu $SLURM_CPUS_PER_TASK \
     --nogz --temp $tmpDir --out $bb.peSpan.wig > /dev/null
 rmdir $tmpDir

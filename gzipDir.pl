@@ -1,4 +1,5 @@
-#!/import/bc2/soft/app/perl/5.10.1/Linux/bin/perl
+#!/usr/bin/perl
+
 #$ -S /import/bc2/soft/app/perl/5.10.1/Linux/bin/perl
 #$ -P project_zavolan
 #$ -q fs_long
@@ -10,8 +11,6 @@
 #$ -cwd
 
 use strict;
-# necessery to exec the RIGHT perl in the system call
-$ENV{PATH} = '/import/bc2/soft/app/perl/5.10.1/Linux/bin:' . $ENV{PATH};
 
 opendir(D, ".");
 while(my $f = readdir D)

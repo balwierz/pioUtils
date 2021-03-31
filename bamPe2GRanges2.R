@@ -14,7 +14,7 @@ if(length(args) < 2 )
 	stop("bamPe2GRanges.R: usage: infile.bam outfile.granges.RDS [maxFragSize] [assembly]\n")
 }
 
-assembly = "danRer7"
+assembly = "danRer10"
 if(length(args) >= 4)
 {
 	assembly = args[[4]]

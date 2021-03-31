@@ -89,7 +89,7 @@ fi
 if [[ ! -e $3.$assembly.goodChr.sorted.granges.RDS && $assembly =~ danRer ]]
    then
    echoerr creating GRanges...
-   sbatch --mem 100G -c 1 -J Granges.$3 ~piotr/bin/bamPe2GRanges.R \
+   sbatch -w `hostname` --mem 100G -c 1 -J Granges.$3 ~piotr/bin/bamPe2GRanges.R \
        $3.$assembly.goodChr.sorted.bam \
        $3.$assembly.goodChr.sorted.granges.RDS \
        1000 \

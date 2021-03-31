@@ -2,7 +2,8 @@
 #SBATCH -c 1
 #SBATCH -N 1
 #SBATCH -J trim
-#SBATCH --mem 5G
+#SBATCH --mem 10G
+# it crashed once at 5G
 #SBATCH -o slurm-%J.trim.out
 #SBATCH -e slurm-%J.trim.err
 

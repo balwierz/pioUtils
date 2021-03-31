@@ -1,4 +1,4 @@
-#!/mnt/biggles/opt/perl/bin/perl -w
+#!/usr/bin/perl -w
 use strict;
 use PerlIO::gzip;
 

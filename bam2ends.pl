@@ -3,7 +3,7 @@ use File::Basename;
 #SBATCH -c 2
 #my $ext=1;
 
-my $chromInfoF = '/mnt/biggles/data/UCSC/goldenpath/danRer7/chromInfo.txt';
+my $chromInfoF = '/mnt/biggles/data/UCSC/goldenpath/danRer10/chromInfo.txt';
 use strict;
 my ($f) = @ARGV;
 die "usage bam2ends.pl file.bam [outfile_+.bed outfile_-.bed]\n" unless defined $f and $f =~ /\.bam$/;
